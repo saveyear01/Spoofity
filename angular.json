@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "spoofity"
+    }
+  },
+  "defaultProject": "spoofity",
+  "cli": {
+    "analytics": false
+  }
 }
