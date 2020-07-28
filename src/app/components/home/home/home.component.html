@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div>
+  <p>Name: {{Auth.user.display_name}}</p>
+  <p>Email: {{Auth.user.email}}</p>
+  <p>Followers: {{Auth.user.followers.total}}</p>
+  <p>Url:  <a href="{{Auth.user.external_urls.spotify}}"> {{Auth.user.external_urls.spotify}}</a></p>
+
+</div>

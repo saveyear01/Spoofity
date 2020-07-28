@@ -1,5 +1,5 @@
 export function urlFormat(url, ...keywords) {
-  return url.concat(keywords.join('/'), '/')
+  return url.concat(keywords.join('/'));
 }
 
 
