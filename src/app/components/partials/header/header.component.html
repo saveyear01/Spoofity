@@ -1,7 +1,24 @@
-<div class="container">
+<div class="main-container mx-auto mb-5">
   <nav class="navbar">
     <a class="navbar-brand text-dark" href="#">
       Spoofity
     </a>
+    <div>
+      <div class="dropdown">
+
+        <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <span *ngIf="auth.user.images[0]">{{auth.user.images[0].url}}</span> -->
+          <div>
+            <!-- <h1>as</h1> -->
+            <!-- <img  class="avatar--md rounded-circle" src="{{auth.user.images[0].url}}" alt="user profile image"> -->
+          </div>
+        </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
   </nav>
 </div>

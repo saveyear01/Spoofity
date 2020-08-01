@@ -15,6 +15,16 @@ export class Follower {
   }
 }
 
+export class Images {
+  height: string = null;
+  width: string = null;
+  url: string = null;
+
+  constructor(data = {}) {
+    Object.assign(this, data);
+  }
+}
+
 export class User {
   display_name: string = null;
   email: string = null;
@@ -23,7 +33,7 @@ export class User {
   type: string = null;
   uri: string = null;
   external_urls : ExternalUrl = new ExternalUrl();
-  images: [] = [];
+  images: Images[] = Array<Images>();
   followers: Follower = new Follower();
 
   constructor(data = {}) {

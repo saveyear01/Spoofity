@@ -49,3 +49,12 @@ $gray-500: 	#212121;
 $base: rem(16);
 
 $h1-font-size   : rem(65);
+
+
+$avatar-sizes: (
+  'sm': 30px,
+  'md': 50px,
+  'lg': 70px,
+  'xl': 90px,
+  '1xl': 120px
+);

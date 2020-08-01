@@ -10067,5 +10067,33 @@ h3 {
     border-color: #535353;
   }
 }
+.main-container {
+  max-width: 1440px;
+}
+
+.avatar--sm {
+  width: 30px;
+  height: 30px;
+}
+
+.avatar--md {
+  width: 50px;
+  height: 50px;
+}
+
+.avatar--lg {
+  width: 70px;
+  height: 70px;
+}
+
+.avatar--xl {
+  width: 90px;
+  height: 90px;
+}
+
+.avatar--1xl {
+  width: 120px;
+  height: 120px;
+}
 
 /*# sourceMappingURL=style.css.map */

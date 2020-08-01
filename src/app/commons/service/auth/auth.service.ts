@@ -29,7 +29,7 @@ export class AuthService {
 
   async getUserData() {
     const response = this.http.get(USER_API)
-      .subscribe((resp: User) => {
+      .subscribe((resp: any) => {
         this.user = new User(resp);
       });
 
@@ -46,7 +46,7 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return !!this.getToken();
+    return (!!this.getToken() && this.user.id);
   }
 
 }
