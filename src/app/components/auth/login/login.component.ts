@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // console.log(this.getAccessTokenParam("access_token"))
+    console.log(this.SpotifyAuth.isAuthenticated());
     if (this.getAccessTokenParam("access_token")) {
       this.SpotifyAuth.setToken(this.getAccessTokenParam("access_token"));
     }
     if (this.SpotifyAuth.isAuthenticated()) {
-      this.state.go('home');
+      // this.state.go('home');
     }
   }
 

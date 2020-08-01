@@ -5,6 +5,6 @@ export const AUTH_STATE: object[] = [
   {
     name: 'login',
     url: '/login',
-    views: ContentOnly(LoginComponent)
+    views: HeaderContent(LoginComponent)
   }
-]
+];

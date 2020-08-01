@@ -22,6 +22,7 @@
     "@uirouter/angular": "^7.0.0",
     "@uirouter/core": "^6.0.6",
     "@uirouter/rx": "^0.6.5",
+    "bootstrap": "^4.5.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

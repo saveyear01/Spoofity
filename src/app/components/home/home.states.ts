@@ -8,4 +8,5 @@ export const HOME_STATES: object[] = [
     url: '/home',
     views: ContentOnly(HomeComponent)
   }
-]
+];
+
