@@ -1,22 +1,26 @@
-<div class="main-container mx-auto mb-5">
+<div class="container-fluid mx-auto mb-5 py-1 bg-dark">
   <nav class="navbar">
-    <a class="navbar-brand text-dark" href="#">
+    <a class="navbar-brand text-white font-weight-bold " uiSref="home">
       Spoofity
     </a>
+    <nav>
+      <a uiSref="home" class="mx-3 h5 text-white">Home</a>
+      <a href="" class="mx-3 h5 text-white">Search</a>
+      <a uiSref="login" class="mx-3 h5 text-white">Library</a>
+
+    </nav>
     <div>
       <div class="dropdown">
-
-        <div id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <!-- <span *ngIf="auth.user.images[0]">{{auth.user.images[0].url}}</span> -->
-          <div>
-            <!-- <h1>as</h1> -->
-            <!-- <img  class="avatar--md rounded-circle" src="{{auth.user.images[0].url}}" alt="user profile image"> -->
+        <div ngbDropdown class="d-inline-block">
+          <div id="dropdownBasic1" ngbDropdownToggle>
+            <img *ngIf="auth.user.images[0]" class="avatar--sm rounded-circle" src="{{auth.user.images[0].url}}" alt="user profile image">
           </div>
-        </div>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>Profile</button>
+            <button ngbDropdownItem>Settings</button>
+            <div class="dropdown-divider"></div>
+            <a uiSref="login" ngbDropdownItem>Logout</a>
+          </div>
         </div>
       </div>
     </div>

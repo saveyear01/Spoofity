@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     console.log(this.SpotifyAuth.isAuthenticated());
     if (this.getAccessTokenParam("access_token")) {
       this.SpotifyAuth.setToken(this.getAccessTokenParam("access_token"));
+      this.SpotifyAuth.getUserData();
     }
     if (this.SpotifyAuth.isAuthenticated()) {
       this.state.go('home');

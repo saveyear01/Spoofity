@@ -28,13 +28,18 @@ export class AuthService {
   }
 
   async getUserData() {
-    const response = this.http.get(USER_API)
+    try {
+      const response = this.http.get(USER_API)
       .subscribe((resp: any) => {
         this.user = new User(resp);
       });
-
-    return response;
+      return response;
+    } catch {
+      this.removeToken();
+      this.state.go('login');
+    }
   }
+
 
   setToken(token: string) {
     window.localStorage.setItem(TOKEN_KEY, token);
@@ -45,8 +50,12 @@ export class AuthService {
     return window.localStorage.getItem(TOKEN_KEY);
   }
 
+  removeToken() {
+    window.localStorage.removeItem(TOKEN_KEY);
+  }
+
   isAuthenticated() {
-    return (!!this.getToken() && this.user.id);
+    return (!!this.getToken());
   }
 
 }
