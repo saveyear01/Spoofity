@@ -8,10 +8,10 @@ export function LoginRequired(t) {
 }
 
 export function Disconnect(t) {
-  console.log("logout");
+  // console.log("logout");
   const auth = t.injector().get(AuthService);
   const state = t.router.stateService;
 
-  if (auth.isAuthenticated()) { auth.removeToken(); }
+  auth.removeToken();
   return state.target('login');
 }

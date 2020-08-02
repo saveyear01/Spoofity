@@ -28,16 +28,17 @@ export class AuthService {
   }
 
   async getUserData() {
-    try {
-      const response = this.http.get(USER_API)
-      .subscribe((resp: any) => {
+    const response = this.http.get(USER_API)
+    .subscribe(
+      (resp: any) => {
         this.user = new User(resp);
-      });
-      return response;
-    } catch {
-      this.removeToken();
-      this.state.go('login');
-    }
+      },
+      error => {
+        this.removeToken();
+        this.state.go('login');
+      }
+    );
+    return response;
   }
 
 

@@ -8,17 +8,11 @@ import { AuthService } from 'src/app/commons/service/auth/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isTrue = true;
   constructor(
     public auth: AuthService
   ) { }
 
   ngOnInit(): void {
-    console.log(this.auth.user);
-
-    setTimeout(() => {
-    console.log(this.auth.user.images[0].url);
-    }, 5000);
   }
 
 }
