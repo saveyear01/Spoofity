@@ -1,1 +1,27 @@
-<p>header works!</p>
+<div class="container-fluid sticky-top mx-auto mb-5 py-1 bg-dark">
+  <nav class="navbar">
+    <a class="navbar-brand text-white font-weight-bold " uiSref="home">
+      Spoofity
+    </a>
+    <nav *ngIf="auth.isAuthenticated()">
+      <a uiSref="home" class="mx-3 h5 text-white">Home</a>
+      <a href="" class="mx-3 h5 text-white">Search</a>
+      <a uiSref="login" class="mx-3 h5 text-white">Library</a>
+    </nav>
+    <div *ngIf="auth.isAuthenticated()">
+      <div class="dropdown">
+        <div ngbDropdown class="d-inline-block">
+          <div id="dropdownBasic1" ngbDropdownToggle>
+            <img *ngIf="auth.user.images[0]" class="avatar--sm rounded-circle" src="{{auth.user.images[0].url}}" alt="user profile image">
+          </div>
+          <div ngbDropdownMenu class="dropdown-menu-right" aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>Profile</button>
+            <button ngbDropdownItem>Settings</button>
+            <div class="dropdown-divider"></div>
+            <a uiSref="logout" ngbDropdownItem>Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

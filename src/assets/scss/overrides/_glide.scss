@@ -1,0 +1,18 @@
+.glide {
+  &__arrow {
+    color: $dark;
+    &--left {
+      left: rem(-16);
+    }
+    &--right {
+      right: rem(-16);
+    }
+  }
+  &__card {
+    img {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<div class="main-container px-3 px-lg-5 mx-auto">
+<section class="row">
+  <div class="col-md-5 col-lg-3">
+    <img *ngIf="Playlist.instance.images[0]" class="w-100 rounded shadow" src="{{Playlist.instance.images[0].url}}" alt="{{Playlist.instance.name}} Image">
+  </div>
+  <div class="col-md-7 d-flex align-items-end col-lg-9 py-3">
+    <div>
+      <span class="text-secondary">{{Playlist.instance.type | uppercase}}</span>
+
+      <h2 class="section__title text-dark w-50">{{Playlist.instance.name}}</h2>
+      <span class="text-body">{{Playlist.instance.description}}</span>
+      <small class="text-secondary my-3 d-block ">Created by <span class="font-weight text-dark">{{Playlist.instance.owner.display_name}}</span></small>
+      <div class="mt-4">
+        <button class="btn btn-md rounded-pill btn-primary px-4"><small>ADD TO LIBRARY</small></button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="my-5 pt-5">
+  <div class="head">
+    <div class="row py-2 text-secondary border-bottom">
+      <div class="col small">TITLE</div>
+      <div class="col small">ARTIST</div>
+      <div class="col small">ALBUM</div>
+      <div class="mr-4"><i class="fal fa-stopwatch"></i></div>
+      <!-- <div><i class="fal fa-ellipsis-v"></i></div> -->
+    </div>
+  </div>
+  <div *ngFor="let track of Playlist.instance.tracks.items">
+    <div class="row py-2 border-bottom">
+      <div class="col small">{{track.track.name}}</div>
+      <div class="col small">
+        <span *ngFor="let artist of track.track.artists">{{artist.name}}</span>
+      </div>
+      <div class="col small">{{track.track.album.name}}</div>
+      <div class="small mr-3">12:32</div>
+      <div><i class="fal fa-ellipsis-v"></i></div>
+    </div>
+  </div>
+</section>
+</div>

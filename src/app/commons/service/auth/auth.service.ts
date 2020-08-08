@@ -28,13 +28,24 @@ export class AuthService {
   }
 
   async getUserData() {
-    const response = this.http.get(USER_API)
-      .subscribe((resp: User) => {
+    const response = await this.http.get(USER_API)
+    .toPromise()
+    .then(
+      (resp: any) => {
         this.user = new User(resp);
-      });
-
+      },
+      error => {
+        this.removeToken();
+        this.state.go('login');
+      }
+    );
     return response;
   }
+
+  getCountry() {
+    return this.user.country;
+  }
+
 
   setToken(token: string) {
     window.localStorage.setItem(TOKEN_KEY, token);
@@ -45,8 +56,16 @@ export class AuthService {
     return window.localStorage.getItem(TOKEN_KEY);
   }
 
+  removeToken() {
+    window.localStorage.removeItem(TOKEN_KEY);
+  }
+
+  resetUser() {
+    this.user = new User();
+  }
+
   isAuthenticated() {
-    return !!this.getToken();
+    return (!!this.getToken());
   }
 
 }

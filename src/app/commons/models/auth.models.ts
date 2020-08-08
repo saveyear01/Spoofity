@@ -1,10 +1,4 @@
-export class ExternalUrl {
-  spotify: string = null;
-
-  constructor(data = {}) {
-    Object.assign(this, data);
-  }
-}
+import { ExternalUrl, Images } from './spotify.models';
 
 export class Follower {
   href: string = null;
@@ -16,6 +10,7 @@ export class Follower {
 }
 
 export class User {
+  country: string = null;
   display_name: string = null;
   email: string = null;
   href: string = null;
@@ -23,7 +18,7 @@ export class User {
   type: string = null;
   uri: string = null;
   external_urls : ExternalUrl = new ExternalUrl();
-  images: [] = [];
+  images: Images[] = Array<Images>();
   followers: Follower = new Follower();
 
   constructor(data = {}) {
