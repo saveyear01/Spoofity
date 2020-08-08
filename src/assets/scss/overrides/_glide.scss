@@ -2,10 +2,17 @@
   &__arrow {
     color: $dark;
     &--left {
-      left: rem(-48);
+      left: rem(-16);
     }
     &--right {
-      right: rem(-48);
+      right: rem(-16);
+    }
+  }
+  &__card {
+    img {
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }

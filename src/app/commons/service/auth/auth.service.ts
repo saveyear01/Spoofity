@@ -28,8 +28,9 @@ export class AuthService {
   }
 
   async getUserData() {
-    const response = this.http.get(USER_API)
-    .subscribe(
+    const response = await this.http.get(USER_API)
+    .toPromise()
+    .then(
       (resp: any) => {
         this.user = new User(resp);
       },
@@ -39,6 +40,10 @@ export class AuthService {
       }
     );
     return response;
+  }
+
+  getCountry() {
+    return this.user.country;
   }
 
 

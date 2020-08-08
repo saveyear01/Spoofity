@@ -10,6 +10,7 @@ export class Follower {
 }
 
 export class User {
+  country: string = null;
   display_name: string = null;
   email: string = null;
   href: string = null;

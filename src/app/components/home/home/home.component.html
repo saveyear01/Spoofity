@@ -1,6 +1,33 @@
 <div class="main-container px-3 px-lg-5 mx-auto">
   <section>
-    <h2>Featured Playlists</h2>
-    <app-slider [List]="Spotify.featured.playlists.items" [perView]="8"></app-slider>
+    <h3 class="section__title">Featured Playlists</h3>
+    <app-slider
+      [List]="Spotify.featured.playlists.items"
+      [perView]="5"
+      [listOf]="'playlist'"
+      [imgSize]="'2xl'"
+      >
+    </app-slider>
+  </section>
+  <section class="my-5 py-3">
+    <h3 class="section__title">New Releases</h3>
+    <app-slider
+      [List]="Spotify.newReleases.albums.items"
+      [perView]="5"
+      [listOf]="'playlist'"
+      [imgSize]="'2xl'"
+      >
+    </app-slider>
+  </section>
+  <section class="my-5 py-3" *ngFor="let genre of genresData">
+    <h3 class="section__title">{{genre.name | titlecase}}</h3>
+    <app-slider
+      [List]="genre.tracks"
+      [perView]="6"
+      [type]="'carousel'"
+      [listOf]="'album'"
+      [imgSize]="'1xl'"
+      >
+    </app-slider>
   </section>
 </div>

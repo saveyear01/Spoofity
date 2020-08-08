@@ -1,4 +1,4 @@
-import { Component, AfterViewInit,  ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit,  ViewChild, ElementRef, Input, OnChanges, SimpleChange } from '@angular/core';
 import Glide from '@glidejs/glide';
 
 @Component({
@@ -7,24 +7,29 @@ import Glide from '@glidejs/glide';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements AfterViewInit {
+  public isMounted = true;
   @ViewChild('glide', {static: false}) slider: ElementRef;
 
   @Input() List: any;
+  @Input() listOf: string;
   @Input() perView = 3;
+  @Input() type = 'slider';
+  @Input() imgSize = 'xl';
 
   constructor() { }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     const glide = new Glide(this.slider.nativeElement, this.glideConfig());
 
     setTimeout(() => {
       glide.mount();
+      console.log(this.List);
     }, 1000);
   }
 
   glideConfig() {
     return {
-      type: 'carousel',
+      type: this.type,
       startAt: 0,
       perView: this.perView
     };

@@ -13,4 +13,11 @@ h1, .h1 {
 p, .paragraph {
   font-family: $Poppins-Regular;
   font-size: $base;
+  white-space: normal;
+  letter-spacing: 1.5px;
+}
+
+span {
+  letter-spacing: 1.5px;
+  white-space: normal;
 }

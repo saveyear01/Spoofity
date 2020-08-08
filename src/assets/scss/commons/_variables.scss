@@ -49,6 +49,8 @@ $gray-500: 	#212121;
 $base: rem(16);
 
 $h1-font-size   : rem(65);
+$h2-font-size   : rem(40);
+
 
 
 $avatar-sizes: (
@@ -56,6 +58,9 @@ $avatar-sizes: (
   'md': 50px,
   'lg': 70px,
   'xl': 90px,
-  '1xl': 120px,
-  '2xl': 150px,
+  '1xl': 200px,
+  '2xl': 250px,
 );
+
+
+$border-color: #e8e8e9;
