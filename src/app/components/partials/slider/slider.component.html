@@ -1,0 +1,16 @@
+<div class="glide" #glide>
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides py-3">
+      <!-- <li *ngFor="let item of [1,2,3,4,5,6,7,8,8,7,65,2]">{{item}}</li> -->
+
+      <li class="" *ngFor="let item of List">
+        <img class="avatar--2xl mx-2 rounded shadow-sm" src="{{item.images[0].url}}" alt="item.name">
+      </li>
+    </ul>
+  </div>
+
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow rounded-circle glide__arrow--left" data-glide-dir="<"><i class="far fa-chevron-left"></i></button>
+    <button class="glide__arrow rounded-circle glide__arrow--right" data-glide-dir=">"><i class="far fa-chevron-right"></i></button>
+  </div>
+</div>

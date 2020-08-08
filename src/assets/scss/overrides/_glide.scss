@@ -1,0 +1,11 @@
+.glide {
+  &__arrow {
+    color: $dark;
+    &--left {
+      left: rem(-48);
+    }
+    &--right {
+      right: rem(-48);
+    }
+  }
+}

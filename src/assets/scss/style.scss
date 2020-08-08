@@ -8,6 +8,17 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
 
+// Import Glide
+@import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@import '../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss';
+
+
+
+// Import fontawesome
+@import '../../../node_modules/@fortawesome/fontawesome-pro/css/all.min.css';
+
 @import 'components/layout';
 @import 'components/avatar';
 
+// overrides
+@import 'overrides/glide';
