@@ -12,6 +12,7 @@ export function Disconnect(t) {
   const auth = t.injector().get(AuthService);
   const state = t.router.stateService;
 
+  auth.resetUser();
   auth.removeToken();
   return state.target('login');
 }

@@ -1,5 +1,6 @@
 <div class="main-container px-3 px-lg-5 mx-auto">
   <section>
     <h2>Featured Playlists</h2>
+    <app-slider [List]="Spotify.featured.playlists.items" [perView]="8"></app-slider>
   </section>
 </div>

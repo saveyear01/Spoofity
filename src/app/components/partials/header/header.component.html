@@ -3,13 +3,12 @@
     <a class="navbar-brand text-white font-weight-bold " uiSref="home">
       Spoofity
     </a>
-    <nav>
+    <nav *ngIf="auth.isAuthenticated()">
       <a uiSref="home" class="mx-3 h5 text-white">Home</a>
       <a href="" class="mx-3 h5 text-white">Search</a>
       <a uiSref="login" class="mx-3 h5 text-white">Library</a>
-
     </nav>
-    <div>
+    <div *ngIf="auth.isAuthenticated()">
       <div class="dropdown">
         <div ngbDropdown class="d-inline-block">
           <div id="dropdownBasic1" ngbDropdownToggle>

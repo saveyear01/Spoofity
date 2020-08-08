@@ -55,6 +55,10 @@ export class AuthService {
     window.localStorage.removeItem(TOKEN_KEY);
   }
 
+  resetUser() {
+    this.user = new User();
+  }
+
   isAuthenticated() {
     return (!!this.getToken());
   }

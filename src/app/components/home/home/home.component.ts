@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from 'src/app/commons/service/auth/auth.service';
+import { BrowseService } from 'src/app/commons/service/spotify/browse.service';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,14 @@ import { AuthService } from 'src/app/commons/service/auth/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   constructor(
-    public Auth: AuthService
+    public Auth: AuthService,
+    public Spotify: BrowseService
   ) { }
 
-  ngOnInit(): void {
-    this.Auth.getUserData();
+  async ngOnInit() {
+    await this.Auth.getUserData();
+    this.Spotify.getFeaturedPlaylist();
   }
 
 }
