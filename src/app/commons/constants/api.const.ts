@@ -6,7 +6,7 @@ import { API_URL } from './config.const';
 
 /* User endpoints
  */
-export const USER_API = urlFormat(API_URL, 'me/');
+export const USER_API         = urlFormat(API_URL, 'me/');
 
 
 /* Browse endpoints */
@@ -19,4 +19,5 @@ export const GENRE_API        = urlFormat(RECOMMENDED_API, 'available-genre-seed
 /* Playlist endpoint */
 export const PLAYLIST_API     = urlFormat(API_URL, 'playlists/');
 
-
+/* Album endpoint */
+export const ALBUM_API        = urlFormat(API_URL, 'albums/');

@@ -1,0 +1,42 @@
+<div class="main-container px-3 px-lg-5 mx-auto">
+  <section class="row">
+    <div class="col-md-5 col-lg-3">
+      <img *ngIf="album.instance.images[0]" class="w-100 rounded shadow" src="{{album.instance.images[0].url}}" alt="{{album.instance.name}} Image">
+    </div>
+    <div class="col-md-7 d-flex align-items-end col-lg-9 py-3">
+      <div>
+        <span class="small text-secondary">{{album.instance.album_type | uppercase}}</span>
+
+        <h2 class="section__title text-dark w-50">{{album.instance.name}}</h2>
+        <small class="text-secondary my-3 d-block ">By
+          <span
+            class="font-weight text-dark"
+            *ngFor="let artist of album.instance.artists; let last = last"
+            >
+            {{artist.name}}
+            <span *ngIf="!last">,</span>
+          </span>
+        </small>
+        <div class="mt-4">
+          <button class="btn btn-md rounded-pill btn-primary px-4"><small>ADD TO LIBRARY</small></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-5 pt-5">
+    <div class="head">
+      <div class="row py-2 text-secondary border-bottom">
+        <div class="col small">TITLE</div>
+        <div class="mr-4"><i class="fal fa-stopwatch"></i></div>
+        <!-- <div><i class="fal fa-ellipsis-v"></i></div> -->
+      </div>
+    </div>
+    <div *ngFor="let track of album.instance.tracks.items">
+      <div class="row py-2 border-bottom">
+        <div class="col small">{{track.name}} <span *ngIf="track.explicit" class="small float-right mr-4 border px-2 py-1 rounded text-secondary">EXPLICIT</span></div>
+        <div class="small mr-3">12:32</div>
+        <div><i class="fal fa-ellipsis-v"></i></div>
+      </div>
+    </div>
+  </section>
+  </div>

@@ -1,11 +1,11 @@
 <div class="glide" #glide>
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides py-3">
-      <li class="glide__card" *ngFor="let item of List" uiSref="playlist" [uiParams]="{id: item.id}">
+      <li class="glide__card" *ngFor="let item of List" uiSref="{{(listOf=='playlist' ? item.type  : item.album.type)}}" [uiParams]="{id: listOf=='track' ? item.album.id : item.id}">
         <img class="avatar--{{imgSize}} rounded shadow-sm" [src]="listOf=='playlist' ? item.images[0].url : item.album.images[0].url">
         <div class="p-1 pr-3">
           <span class="font-weight-bold">{{listOf=='playlist' ? item.name : item.album.name}}</span>
-          <small class="d-block text-secondary">{{(listOf=='playlist' ? item.type  : item.album.type)}}</small>
+          <small class="d-block text-secondary">{{(listOf==  'track'|| 'playlist' ? item.type  : item.album.type)}}</small>
         </div>
       </li>
     </ul>

@@ -37,6 +37,7 @@ export class Album {
   images: Images[] = Array<Images>();
   name: string = null;
   release_date: string = null;
+  tracks: Tracks = new Tracks();
   release_date_precision: string = null;
   total_tracks: number = null;
   type: string = null;
